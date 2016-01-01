@@ -4,7 +4,6 @@
 		
 	<target name = "mkdir" description = "create foolders">
     	<mkdir dir = "build" description = "Create folder for compile"/>
-    	<mkdir dir = "build/jarFile" description = "Create folder for compile"/>
     </target>
 
 	<target name = "compile" depends = "mkdir">
@@ -12,7 +11,7 @@
 	</target>
 	
 	<target name = "jar" description = "Make jar file" depends = "compile">
-		<jar destfile = "build/jarFile/Efficiency.jar" basedir = "build">
+		<jar destfile = "jarFile/Efficiency.jar" basedir = "build">
 			<manifest>
 				<attribute name = "Main-Class" value = "IndicatorsOfEfficiency"/>
 			</manifest>
@@ -21,6 +20,7 @@
 	
 	<target name = "clean" description = "Clean up">
 		<delete dir = "build"/>
+		<delete dir = "jarFile"/>
 	</target>
 		
 </project>
